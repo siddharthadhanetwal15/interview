@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * Created by dhanetwa on 2/13/2018.
+ * Deep copy of an object will have exact copy of all the fields of original object just like shallow copy. But in additional, if original object has any references to other objects as fields, then copy of those objects are also created by calling clone() method on them. That means clone object and original object will be 100% disjoint. They will be 100% independent of each other.
+ * Any changes made to clone object will not be reflected in original object or vice-versa.
  */
 class Course implements Cloneable{
     String subject1;

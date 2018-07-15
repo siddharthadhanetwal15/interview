@@ -58,6 +58,7 @@ public class WaitNotifyExample {
             Scanner s = new Scanner(System.in);
             synchronized (this){
                 System.out.println("Waiting for return key.");
+
                 s.nextLine();
                 System.out.println("Return key pressed");
                 // notifies the produce thread that it

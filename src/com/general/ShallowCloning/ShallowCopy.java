@@ -1,7 +1,11 @@
 package com.general.ShallowCloning;
 
+import java.util.Collection;
+
 /**
  * Created by dhanetwa on 2/13/2018.
+ * In the above example, ‘student1‘ is an object of ‘Student‘ class which has three fields – id, name and course. ‘course‘ is a reference variable pointing to a ‘Course‘ type object. Clone of ‘student1‘ is created by calling clone method on it and assigned it to ‘student2‘. As default version of clone method creates the shallow copy, the ‘course‘ field of both ‘student1‘ and ‘student2‘ will be pointing to same ‘Course‘ object.
+ * So, any changes made to this object through ‘student2‘ will be reflected in ‘student1‘ or vice-versa.
  */
 class Course{
     String subject1;
@@ -14,6 +18,7 @@ class Course{
     }
 }
 class Student implements Cloneable{
+
     int id;
     String name;
     Course course;
@@ -36,7 +41,10 @@ public class ShallowCopy {
         //before change
         System.out.println("Before: " + sid.course.subject3);
         kevy.course.subject3 = "Maths";
+        kevy.id=2;
         //after change
         System.out.println("After: " + sid.course.subject3);
+        System.out.println("student sid id: " + sid.id);
+        System.out.println("student kevy id: " + kevy.id);
     }
 }
