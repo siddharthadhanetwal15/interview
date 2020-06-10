@@ -57,6 +57,8 @@ public class SerialExample {
 
             // value of static variable changed
             object.b = 2000;
+            //but age won't change
+            object.age = 28;
         }
 
         catch (IOException ex) {
@@ -96,3 +98,10 @@ public class SerialExample {
         }
     }
 }
+/*
+https://www.geeksforgeeks.org/serialization-in-java/
+Description for Output:
+You have seen while deserializing the object the values of a and b has changed. The reason being a was marked as transient and b was static.
+In case of transient variables:- A variable defined with transient keyword is not serialized during serialization process.This variable will be initialized with default value during deserialization. (e.g: for objects it is null, for int it is 0).
+In case of static Variables:- A variable defined with static keyword is not serialized during serialization process.This variable will be loaded with current value defined in the class during deserialization.
+ */
