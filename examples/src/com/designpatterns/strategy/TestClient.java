@@ -9,15 +9,6 @@ public class TestClient {
         shoppingCart.addItem(item2);
         shoppingCart.pay(new DebitCardStrategy("2332 2233 5334 6743", "423"));
         shoppingCart.pay(new PaypalStrategy("sid@gmail.com", "pas123"));
-
-        try {
-            System.out.println("in try");
-            return;
-        } catch (Exception e){
-
-        }finally {
-            System.out.println(" finally");
-        }
     }
 
 }

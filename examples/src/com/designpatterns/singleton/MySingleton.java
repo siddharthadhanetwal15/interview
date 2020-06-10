@@ -3,6 +3,7 @@ package com.designpatterns.singleton;
 /**
  * Created by dhanetwa on 7/12/2018.
  * lazy initialization
+ * use: config classes, cache, logging
  */
 public class MySingleton {
     private static MySingleton abc;
