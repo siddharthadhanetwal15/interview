@@ -23,6 +23,12 @@ public class MultiThreadingDemo {
             MultiThread multiThread = new MultiThread();
             multiThread.start();
             Thread t1 = new Thread(new MultiThreadUsingRunnable());
+            Thread t2 = new Thread(new Runnable(){
+                @Override
+                public void run() {
+                    System.out.println("hi, thready!!");
+                }
+            });
             t1.start();
         }
     }
