@@ -7,8 +7,7 @@ import java.util.List;
  * Created by dhanetwa on 4/18/2018.
  */
 public class GFG {
-    public static void main (String[] args)
-    {
+    public static void main(String[] args) {
 
         // Creating the Objects of Book class.
         Book b1 = new Book("EffectiveJ Java", "Joshua Bloch");
@@ -27,24 +26,23 @@ public class GFG {
 
 
         List<Book> bks = library.getTotalBooksInLibrary();
-        for(Book bk : bks){
-            System.out.println("Title : " + bk.title + " and " +" Author : " + bk.author);
+        for (Book bk : bks) {
+            System.out.println("Title : " + bk.title + " and " + " Author : " + bk.author);
         }
-        library=null;
+        library = null;
         List<Book> bks1 = library.getTotalBooksInLibrary();
-        for(Book bk1 : bks1){
-            System.out.println("Title : " + bk1.title + " and " +" Author : " + bk1.author);
+        for (Book bk1 : bks1) {
+            System.out.println("Title : " + bk1.title + " and " + " Author : " + bk1.author);
         }
     }
 }
-class Book
-{
+
+class Book {
 
     public String title;
     public String author;
 
-    Book(String title, String author)
-    {
+    Book(String title, String author) {
 
         this.title = title;
         this.author = author;
@@ -53,18 +51,16 @@ class Book
 
 // Libary class contains
 // list of books.
-class Library
-{
+class Library {
 
     // reference to refer to list of books.
     private final List<Book> books;
 
-    Library (List<Book> books)
-    {
+    Library(List<Book> books) {
         this.books = books;
     }
 
-    public List<Book> getTotalBooksInLibrary(){
+    public List<Book> getTotalBooksInLibrary() {
 
         return books;
     }

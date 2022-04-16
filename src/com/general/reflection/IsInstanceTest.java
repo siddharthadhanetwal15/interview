@@ -8,14 +8,13 @@ public class IsInstanceTest {
     // instance of class whose name is passed as a
     // string 'c'.
     public static boolean fun(Object obj, String c)
-            throws ClassNotFoundException
-    {
+            throws ClassNotFoundException {
         return Class.forName(c).isInstance(obj);
     }
+
     // Driver code that calls fun()
     public static void main(String[] args)
-            throws ClassNotFoundException
-    {
+            throws ClassNotFoundException {
         Integer i = new Integer(5);
 
         // print true as i is instance of class

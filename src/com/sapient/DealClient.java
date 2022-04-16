@@ -17,7 +17,7 @@ public class DealClient {
         Scanner scanner = new Scanner(System.in);
         String fileLocation = scanner.next();
         File file = new File(fileLocation);
-        if(!file.exists()){
+        if (!file.exists()) {
             System.out.println("No input file present. Exiting");
             System.exit(0);
         }
@@ -26,17 +26,16 @@ public class DealClient {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String content = "";
             List<DetailInput> detailList = new ArrayList<>();
-            int row=0;
-            while((content=bufferedReader.readLine())!=null){
+            int row = 0;
+            while ((content = bufferedReader.readLine()) != null) {
 //              System.out.println(content);
-                if(row != 0) {
+                if (row != 0) {
                     String[] contentArray = content.split(",");
                     DetailInput detailInput = new DetailInput();
                     detailInput.setCity(contentArray[0]);
-                    if(contentArray[1].equalsIgnoreCase("")){
+                    if (contentArray[1].equalsIgnoreCase("")) {
                         detailInput.setCountry(contentArray[0]);
-                    }
-                    else{
+                    } else {
                         detailInput.setCountry(contentArray[1]);
                     }
                     detailInput.setGender(contentArray[2]);

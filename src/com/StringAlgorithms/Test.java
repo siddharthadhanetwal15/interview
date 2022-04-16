@@ -6,21 +6,21 @@ import java.util.Date;
 /**
  * Created by dhanetwa on 9/6/2018.
  */
-public class Test{
-    void m1(String str, Date date){
+public class Test {
+    void m1(String str, Date date) {
         System.out.println(str);
     }
 
-    void m2(String str, Timestamp ts){
+    void m2(String str, Timestamp ts) {
         System.out.println(str);
     }
 
-    void exceptionCheck() throws Exception{
-        try{
+    void exceptionCheck() throws Exception {
+        try {
             throw new Exception("try");
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new Exception("catch");
-        }finally {
+        } finally {
             throw new Exception("finally");
         }
     }
@@ -34,7 +34,7 @@ public class Test{
 
         try {
             t1.exceptionCheck();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
     }

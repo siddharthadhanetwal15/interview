@@ -8,11 +8,12 @@ import java.util.concurrent.TimeoutException;
 /**
  * Created by dhanetwa on 4/24/2018.
  */
-class Computation1 implements Runnable{
+class Computation1 implements Runnable {
     public static int product = 0;
+
     @Override
     public void run() {
-        product = 2*3;
+        product = 2 * 3;
         try {
             Tester.cyclicBarrier.await();
         } catch (InterruptedException e) {
@@ -22,14 +23,16 @@ class Computation1 implements Runnable{
         }
     }
 }
-class Computation2 implements Runnable{
+
+class Computation2 implements Runnable {
     public static int sum = 0;
+
     @Override
     public void run() {
         // check if newBarrier is broken or not
         System.out.println("Is the barrier broken? - " + Tester.cyclicBarrier.isBroken());
         sum = 10 + 20;
-        try{
+        try {
             Tester.cyclicBarrier.await(3000, TimeUnit.MILLISECONDS);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -40,6 +43,7 @@ class Computation2 implements Runnable{
         }
     }
 }
+
 public class Tester implements Runnable {
     public static CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
 
@@ -48,9 +52,10 @@ public class Tester implements Runnable {
         Thread t1 = new Thread(tester);
         t1.start();
     }
+
     @Override
     public void run() {
-        System.out.println("Number of parties required to trip the barrier = "+
+        System.out.println("Number of parties required to trip the barrier = " +
                 cyclicBarrier.getParties());
         System.out.println("Total of product and sum = " + (Computation1.product +
                 Computation2.sum));
@@ -67,7 +72,7 @@ public class Tester implements Runnable {
         } catch (InterruptedException | BrokenBarrierException e) {
             e.printStackTrace();
         }
-        System.out.println("Number of parties waiting at the barrier at this point = "+ cyclicBarrier.getNumberWaiting());
+        System.out.println("Number of parties waiting at the barrier at this point = " + cyclicBarrier.getNumberWaiting());
         // barrier breaks as the number of thread waiting for the barrier
         // at this point = 3
         System.out.println("Sum of product and sum = " + (Computation1.product +

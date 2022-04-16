@@ -39,7 +39,7 @@ public class HashMapWithCustomKey {
     }
 }
 
-final class Fruits{
+final class Fruits {
     String name;
     int price;
 
@@ -94,27 +94,34 @@ final class Fruits{
         result = 31 * result + price;
         return result;
     }
-    public static final class FruitBuilder{
+
+    public static final class FruitBuilder {
         private String name;
         private int price;
-        public FruitBuilder(){
+
+        public FruitBuilder() {
 
         }
+
         public static FruitBuilder aFruit() {
             return new FruitBuilder();
         }
+
         public static FruitBuilder aFruit(Fruits fruits) {
             return aFruit().withName(fruits.getName()).withPrice(fruits.getPrice());
         }
+
         public FruitBuilder withPrice(int price) {
             this.price = price;
             return this;
         }
+
         public FruitBuilder withName(String name) {
             this.name = name;
             return this;
         }
-        public Fruits build(){
+
+        public Fruits build() {
             return new Fruits(this);
         }
     }

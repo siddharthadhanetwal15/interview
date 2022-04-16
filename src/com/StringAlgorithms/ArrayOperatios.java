@@ -13,20 +13,20 @@ public class ArrayOperatios {
         System.out.println(Arrays.toString(stringArray));
         int n = in.nextInt();
         int inputArray[] = new int[n];
-        int j=0;
-        while(n!=0){
+        int j = 0;
+        while (n != 0) {
             inputArray[j] = in.nextInt();
             j++;
             n--;
         }
-        System.out.println("input from keyboard: "+Arrays.toString(inputArray));
+        System.out.println("input from keyboard: " + Arrays.toString(inputArray));
 
         int arr[] = {6, 9, 3, 4, 5};
         int arr2[] = new int[7];
         arr2 = new int[]{2, 4};
 
         Arrays.sort(arr);
-        for(int item : arr){
+        for (int item : arr) {
             System.out.println(item);
         }
         System.out.println("index: " + Arrays.binarySearch(arr, 5));
@@ -35,18 +35,18 @@ public class ArrayOperatios {
         System.out.println("list element at 2nd pos.: " + list.get(1));
 
         System.out.println("sum");
-        int sum= 0;
-        for(int item : arr){
+        int sum = 0;
+        for (int item : arr) {
             sum += item;
         }
         System.out.println(sum);
         System.out.println("find index");
         int index = 0;
         int element = 6;
-        for(int item : arr){
-            if(item==element){
-                System.out.println("index is :"+ index);
-            }else{
+        for (int item : arr) {
+            if (item == element) {
+                System.out.println("index is :" + index);
+            } else {
                 index++;
             }
         }
@@ -54,12 +54,12 @@ public class ArrayOperatios {
         Arrays.sort(integerArr);
         System.out.println(Arrays.toString(integerArr));
         Set<Integer> hs = new HashSet<>();
-        for(int i = 0; i<integerArr.length-1; i++){
-            int diff = integerArr[i+1] - integerArr[i];
-            if(diff == 1){
+        for (int i = 0; i < integerArr.length - 1; i++) {
+            int diff = integerArr[i + 1] - integerArr[i];
+            if (diff == 1) {
                 hs.add(integerArr[i]);
-                hs.add(integerArr[i+1]);
-            }else{
+                hs.add(integerArr[i + 1]);
+            } else {
                 break;
             }
         }

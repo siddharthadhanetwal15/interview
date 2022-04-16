@@ -5,8 +5,8 @@ package com.dsa.doublylinkedlist;
  */
 public class DLLNode {
     private int data;
-     DLLNode prev;
-     DLLNode next;
+    DLLNode prev;
+    DLLNode next;
 
     public DLLNode(int data) {
         this.data = data;

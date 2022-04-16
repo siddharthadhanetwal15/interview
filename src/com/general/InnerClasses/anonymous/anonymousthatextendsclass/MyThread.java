@@ -5,7 +5,7 @@ package com.general.InnerClasses.anonymous.anonymousthatextendsclass;
  */
 public class MyThread {
     public static void main(String[] args) {
-        Thread thread = new Thread(){
+        Thread thread = new Thread() {
             @Override
             public void run() {
                 System.out.println("child thread");

@@ -5,23 +5,24 @@ import java.util.List;
 
 public class ShoppingCart {
     List<Item> items;
-    public ShoppingCart(){
+
+    public ShoppingCart() {
         this.items = new ArrayList<>();
     }
 
-    public void addItem(Item item){
+    public void addItem(Item item) {
         this.items.add(item);
     }
 
-    public int getTotal(){
+    public int getTotal() {
         int sum = 0;
-        for(Item item : items){
+        for (Item item : items) {
             sum += item.getPrice();
         }
         return sum;
     }
 
-    public void pay(PaymentStrategy paymentMethod){
+    public void pay(PaymentStrategy paymentMethod) {
         int amount = getTotal();
         paymentMethod.pay(amount);
     }

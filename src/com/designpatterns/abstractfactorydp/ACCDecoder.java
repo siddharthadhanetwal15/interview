@@ -8,7 +8,7 @@ import java.io.InputStream;
 public class ACCDecoder implements Decoder {
     @Override
     public InputStream decodeFile(String mediaFileName) {
-        System.out.println("ACC Decoder, decoding file : "+ mediaFileName);
+        System.out.println("ACC Decoder, decoding file : " + mediaFileName);
         return null;
     }
 }

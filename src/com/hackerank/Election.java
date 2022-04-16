@@ -3,9 +3,10 @@ package com.hackerank;
 import java.util.*;
 
 public class Election {
-    void prepareMap(){
+    void prepareMap() {
 
     }
+
     public static void main(String[] args) {
         String electionArr[] = {"Victor", "Veronica",
                 "Ryan",
@@ -18,10 +19,10 @@ public class Election {
                 "Veronica"};
         Map<String, Integer> electionCountMap = new HashMap<>();
 
-        for(int i=0; i<electionArr.length; i++){
-            if(electionCountMap.size() != 0 && electionCountMap.get(electionArr[i])!= null && electionCountMap.get(electionArr[i])>=1){
+        for (int i = 0; i < electionArr.length; i++) {
+            if (electionCountMap.size() != 0 && electionCountMap.get(electionArr[i]) != null && electionCountMap.get(electionArr[i]) >= 1) {
                 electionCountMap.put(electionArr[i], electionCountMap.get(electionArr[i]) + 1);
-            }else {
+            } else {
                 electionCountMap.put(electionArr[i], 1);
             }
         }
@@ -37,8 +38,8 @@ public class Election {
         for (Map.Entry<String, Integer> entry : list) {
             sortedMap.put(entry.getKey(), entry.getValue());
         }
-        int count=0;
-        for(String key : sortedMap.keySet()){
+        int count = 0;
+        for (String key : sortedMap.keySet()) {
 
         }
 

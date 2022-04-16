@@ -16,7 +16,7 @@ public class ListNode {
         this.visited = visited;
     }
 
-    public ListNode(int data){
+    public ListNode(int data) {
         this.data = data;
     }
 

@@ -6,8 +6,7 @@ import java.util.StringTokenizer;
  * Created by dhanetwa on 4/18/2018.
  */
 public class Tokenizer {
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         System.out.println("Using Constructor 1 - ");
         StringTokenizer st1 =
                 new StringTokenizer("Hello Geeks How are you", " ");
@@ -22,7 +21,7 @@ public class Tokenizer {
 
         System.out.println("Using Constructor 3 - ");
         StringTokenizer st3 =
-                new StringTokenizer("JAVA : Code : String", " :",  true);
+                new StringTokenizer("JAVA : Code : String", " :", true);
         while (st3.hasMoreTokens())
             System.out.println(st3.nextToken());
     }

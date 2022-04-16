@@ -18,7 +18,7 @@ public class CustomizedComparator {
         priorityQueue.add(s2);
         priorityQueue.add(s3);
         Iterator it = priorityQueue.iterator();
-        while (it.hasNext()){
+        while (it.hasNext()) {
             Student s = priorityQueue.remove();
             System.out.println(s.getName());
         }
@@ -26,14 +26,14 @@ public class CustomizedComparator {
     }
 }
 
-class CGPAComparator implements Comparator<Student>{
+class CGPAComparator implements Comparator<Student> {
     @Override
     public int compare(Student o1, Student o2) {
         return Integer.compare(o1.getCgpa(), o2.getCgpa());
     }
 }
 
-class Student{
+class Student {
     private int cgpa;
     private String name;
 

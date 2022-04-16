@@ -7,8 +7,8 @@ public class JPMC {
     public static void main(String[] args) {
         String number = "123";
         char numArray[] = number.toCharArray();
-        for (char c:
-             numArray) {
+        for (char c :
+                numArray) {
             int digit = c - 48;
             //Character.getNumericValue(digit);
             System.out.println(digit);

@@ -15,7 +15,7 @@ public class JavaPQueue {
         priorityQueue.add(3);
         priorityQueue.add(1);
         Iterator it = priorityQueue.iterator();
-        while (it.hasNext()){
+        while (it.hasNext()) {
             Integer e = priorityQueue.remove(); // priority queue will remove elements based on natural ordering. insertion will not happen that way(not sorted)
             System.out.println(e);
         }

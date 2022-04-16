@@ -7,9 +7,10 @@ public class MyThread {
     public static void main(String[] args) {
         int x = 10;
         Thread t = new Thread(new Runnable() {
-            void abc(){
+            void abc() {
                 System.out.println(x);
             }
+
             @Override
             public void run() {
                 abc();

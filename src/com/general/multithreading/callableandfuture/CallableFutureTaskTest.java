@@ -8,7 +8,7 @@ import java.util.concurrent.FutureTask;
 /**
  * Created by dhanetwa on 4/22/2018.
  */
-class CallableExample implements Callable{
+class CallableExample implements Callable {
     @Override
     public Object call() throws Exception {
         Random random = new Random();
@@ -20,12 +20,13 @@ class CallableExample implements Callable{
         return randomNumber;
     }
 }
-public class CallableFutureTaskTest{
+
+public class CallableFutureTaskTest {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         // FutureTask is a concrete class that
         // implements both Runnable and Future
         FutureTask[] futureTasks = new FutureTask[5];
-        for(int i = 0; i<5; i++){
+        for (int i = 0; i < 5; i++) {
             Callable callable = new CallableExample();
             // Create the FutureTask with Callable
             futureTasks[i] = new FutureTask(callable);
@@ -34,7 +35,7 @@ public class CallableFutureTaskTest{
             Thread t = new Thread(futureTasks[i]);
             t.start();
         }
-        for(int i = 0; i<5; i++){
+        for (int i = 0; i < 5; i++) {
             // As it implements Future, we can call get()
             System.out.println(futureTasks[i].get());
             // This method blocks till the result is obtained

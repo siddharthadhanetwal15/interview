@@ -5,7 +5,7 @@ package com.scratchpad;
  */
 public class ThreadQues1 {
     public static void main(String[] args) {
-        Thread t = new MyThread(){
+        Thread t = new MyThread() {
             public void run() {
                 System.out.println("anonymous");
             }
@@ -14,13 +14,14 @@ public class ThreadQues1 {
     }
 
 }
-class MyThread extends Thread{
+
+class MyThread extends Thread {
     @Override
     public void run() {
         System.out.println("overide run");
     }
 
-    public void run(String a){
+    public void run(String a) {
         System.out.println(a);
     }
 }

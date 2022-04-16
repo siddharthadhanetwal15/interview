@@ -8,7 +8,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 /**
  * Created by dhanetwa on 9/13/2018.
  */
-public class Example{
+public class Example {
 
     public static void main(String[] args) {
         CommonQueue commonQueue = new CommonQueue(new ArrayBlockingQueue(2));
@@ -25,11 +25,13 @@ public class Example{
     }
 }
 
-class ProducerExecutor extends Thread{
+class ProducerExecutor extends Thread {
     CommonQueue commonQueue;
-    ProducerExecutor(CommonQueue queue){
+
+    ProducerExecutor(CommonQueue queue) {
         this.commonQueue = queue;
     }
+
     @Override
     public void run() {
         Employee e1 = new Employee(1, "Sid");
@@ -43,11 +45,11 @@ class ProducerExecutor extends Thread{
             while (true) {
                 try {
                     for (Employee employee : employeeList) {
-                        while(commonQueue.getSharedQueue().size() == 2) {
+                        while (commonQueue.getSharedQueue().size() == 2) {
                             wait();
                         }
-                            System.out.println(commonQueue.getSharedQueue().add(employee));
-                            notify();
+                        System.out.println(commonQueue.getSharedQueue().add(employee));
+                        notify();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -57,11 +59,13 @@ class ProducerExecutor extends Thread{
     }
 }
 
-class ConsumerExecutor extends Thread{
+class ConsumerExecutor extends Thread {
     CommonQueue commonQueue;
-    ConsumerExecutor(CommonQueue queue){
+
+    ConsumerExecutor(CommonQueue queue) {
         this.commonQueue = queue;
     }
+
     //Consumer consumerThread = new Consumer();
     @Override
     public void run() {
@@ -71,8 +75,8 @@ class ConsumerExecutor extends Thread{
                     while (commonQueue.getSharedQueue().isEmpty()) {
                         wait();
                     }
-                        System.out.println(commonQueue.getSharedQueue().remove());
-                        notify();
+                    System.out.println(commonQueue.getSharedQueue().remove());
+                    notify();
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -83,9 +87,10 @@ class ConsumerExecutor extends Thread{
 }
 
 
-class CommonQueue{
+class CommonQueue {
     private Queue<Employee> sharedQueue;
-    CommonQueue(Queue queue){
+
+    CommonQueue(Queue queue) {
         this.sharedQueue = queue;
     }
 
@@ -98,13 +103,15 @@ class CommonQueue{
     }
 }
 
-class Employee{
+class Employee {
     private int id;
     private String name;
-    Employee(int id, String name){
+
+    Employee(int id, String name) {
         this.id = id;
         this.name = name;
     }
+
     public int getId() {
         return id;
     }

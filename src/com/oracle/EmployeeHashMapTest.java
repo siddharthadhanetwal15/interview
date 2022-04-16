@@ -10,8 +10,8 @@ public class EmployeeHashMapTest {
     public static void main(String[] args) {
         Company company = new Company();
         company.setCompanyName("Oracle");
-        Employee e1 = new Employee(10,"Sid", "Jaipur", company);
-        Employee e2 = new Employee(20,"Babu", "Bangalore", company);
+        Employee e1 = new Employee(10, "Sid", "Jaipur", company);
+        Employee e2 = new Employee(20, "Babu", "Bangalore", company);
         Map<Integer, Employee> employeeMap = new HashMap<>();
         employeeMap.put(e1.getId(), e1);
         employeeMap.put(e2.getId(), e2);
@@ -19,7 +19,7 @@ public class EmployeeHashMapTest {
     }
 }
 
-class Employee{
+class Employee {
     Integer id;
     String name;
     String city;
@@ -58,10 +58,11 @@ class Employee{
 
     @Override
     public String toString() {
-        return this.getId().toString() + " " +this.getName().toString() + " " +this.getCity().toString() + " " + this.company.toString();
+        return this.getId().toString() + " " + this.getName().toString() + " " + this.getCity().toString() + " " + this.company.toString();
     }
 }
-class Company{
+
+class Company {
     String companyName;
 
     public String getCompanyName() {
@@ -71,8 +72,9 @@ class Company{
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return this.companyName.toString();
     }
 }

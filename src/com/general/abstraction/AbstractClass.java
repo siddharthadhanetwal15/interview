@@ -2,13 +2,15 @@ package com.general.abstraction;
 
 public abstract class AbstractClass {
     int i;
-    public AbstractClass(int data){
+
+    public AbstractClass(int data) {
         this.i = data;
     }
+
     abstract void method();
 }
 
-class ImplementationClass extends AbstractClass{
+class ImplementationClass extends AbstractClass {
 
     public ImplementationClass(int data) {
         super(data);
@@ -19,7 +21,7 @@ class ImplementationClass extends AbstractClass{
         System.out.println(i);
     }
 
-    void defaultImpl(){
+    void defaultImpl() {
         System.out.println("default impl");
     }
 

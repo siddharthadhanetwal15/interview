@@ -5,11 +5,12 @@ package com.general.customexception;
  */
 public class TestException {
 
-    static void checkValidAge(int age) throws InvalidAgeException{
-        if(age < 18){
+    static void checkValidAge(int age) throws InvalidAgeException {
+        if (age < 18) {
             throw new InvalidAgeException("Age is lower then 18yrs!!");
         }
     }
+
     public static void main(String[] args) {
         try {
             checkValidAge(17);
@@ -19,8 +20,8 @@ public class TestException {
     }
 }
 
-class InvalidAgeException extends Exception{
-    InvalidAgeException(String s){
+class InvalidAgeException extends Exception {
+    InvalidAgeException(String s) {
         super(s);
     }
 }

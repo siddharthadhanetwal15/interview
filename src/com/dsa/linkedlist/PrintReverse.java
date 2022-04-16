@@ -5,16 +5,20 @@ package com.dsa.linkedlist;
  */
 public class PrintReverse {
     private ListNode head;
-    PrintReverse(ListNode head){
+
+    PrintReverse(ListNode head) {
         this.head = head;
     }
+
     java.util.LinkedList s = new java.util.LinkedList();
-    void reversePrint(ListNode head){
+
+    void reversePrint(ListNode head) {
         if (head == null) return;
         reversePrint(head.getNext());
         s.add(head.getData()); // adding reverse ll to new ll
         System.out.println(head.getData());
     }
+
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         ListNode node1 = new ListNode(5);

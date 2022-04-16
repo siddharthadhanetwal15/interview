@@ -1,6 +1,7 @@
 package com.scratchpad;
 
-/**https://www.geeksforgeeks.org/output-java-program-set-25-polymorphism/
+/**
+ * https://www.geeksforgeeks.org/output-java-program-set-25-polymorphism/
  * Created by dhanetwa on 9/16/2018.
  */
 public class Polymorphism {
@@ -25,32 +26,33 @@ public class Polymorphism {
     }
 }
 
-class X{
-    void play(){
+class X {
+    void play() {
         System.out.println("X");
     }
 }
 
-class Y extends X{
-    void play(){
+class Y extends X {
+    void play() {
         System.out.println("Y");
     }
 }
 
-class Z extends X{
-    void play(){
+class Z extends X {
+    void play() {
         System.out.println("Z");
     }
 
-    void dance(){
+    void dance() {
         System.out.println("z dance");
     }
 }
 
-interface A{
+interface A {
     void sing();
 }
-class B implements A{
+
+class B implements A {
 
     @Override
     public void sing() {
@@ -58,18 +60,18 @@ class B implements A{
     }
 }
 
-class C implements A{
+class C implements A {
     @Override
     public void sing() {
         System.out.println(C.class.getName());
     }
 
-    void eat(){
+    void eat() {
         System.out.println("eat");
     }
 }
 
-class D{
+class D {
     public void sing() {
         System.out.println(D.class.getName());
     }

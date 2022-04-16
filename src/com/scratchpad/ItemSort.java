@@ -24,9 +24,9 @@ public class ItemSort {
     }
 }
 
-class Item{
-private String name;
-private int price;
+class Item {
+    private String name;
+    private int price;
 
     public Item(String name, int price) {
         this.name = name;
@@ -58,10 +58,10 @@ private int price;
     }
 }
 
-class SortByPrice implements Comparator{
+class SortByPrice implements Comparator {
 
     @Override
     public int compare(Object o1, Object o2) {
-        return Integer.compare(((Item)o1).getPrice(),((Item)o2).getPrice());
+        return Integer.compare(((Item) o1).getPrice(), ((Item) o2).getPrice());
     }
 }

@@ -7,9 +7,9 @@ public class VideoDecoderFactory implements DecoderFactory {
     @Override
     public Decoder getDecoder(String type) {
         type = type.toUpperCase();
-        if(type.equalsIgnoreCase("MP4")){
+        if (type.equalsIgnoreCase("MP4")) {
             return new MP4Decoder();
-        }else if(type.equalsIgnoreCase("FLV")){
+        } else if (type.equalsIgnoreCase("FLV")) {
             return new FLVDecoder();
         }
         return null;

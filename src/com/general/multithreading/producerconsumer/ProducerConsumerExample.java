@@ -41,15 +41,16 @@ public class ProducerConsumerExample {
         }
     }
 
-    public static class PC{
+    public static class PC {
         // Create a list shared by producer and consumer
         // Size of list is 2.
         LinkedList<Integer> linkedList = new LinkedList<>();
         int capacity = 2;
+
         public void produce() throws InterruptedException {
             int value = 0;
-            while(true){
-                synchronized (this){
+            while (true) {
+                synchronized (this) {
                     // producer thread waits while list is full
                     while (linkedList.size() == capacity)
                         wait();
@@ -66,11 +67,12 @@ public class ProducerConsumerExample {
                 }
             }
         }
+
         public void consume() throws InterruptedException {
-            while (true){
-                synchronized (this){
+            while (true) {
+                synchronized (this) {
                     // consumer thread waits while list is empty
-                    while (linkedList.size()==0)
+                    while (linkedList.size() == 0)
                         wait();
                     //to retrive the ifrst job in the list
                     int val = linkedList.removeFirst();

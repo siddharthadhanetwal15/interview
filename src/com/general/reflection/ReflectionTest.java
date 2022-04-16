@@ -7,20 +7,22 @@ import java.lang.reflect.Method;
 /**
  * Created by dhanetwa on 5/6/2018.
  */
-class Test{
+class Test {
     // creating a private field
     private String s;
 
     // creating a public constructor
-    public Test()  {  s = "GeeksforGeeks"; }
+    public Test() {
+        s = "GeeksforGeeks";
+    }
 
     // Creating a public method with no arguments
-    public void method1()  {
+    public void method1() {
         System.out.println("The string is " + s);
     }
 
     // Creating a public method with int as argument
-    public void method2(int n)  {
+    public void method2(int n) {
         System.out.println("The number is " + n);
     }
 
@@ -29,9 +31,9 @@ class Test{
         System.out.println("Private method invoked");
     }
 }
+
 public class ReflectionTest {
-    public static void main(String args[]) throws Exception
-    {
+    public static void main(String args[]) throws Exception {
         // Creating object whose property is to be checked
         Test obj = new Test();
 
@@ -54,7 +56,7 @@ public class ReflectionTest {
         Method[] methods = cls.getMethods();
 
         // Printing method names
-        for (Method method:methods)
+        for (Method method : methods)
             System.out.println(method.getName());
 
         // creates object of desired method by providing the

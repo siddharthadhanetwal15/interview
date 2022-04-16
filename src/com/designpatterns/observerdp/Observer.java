@@ -6,7 +6,8 @@ package com.designpatterns.observerdp;
  */
 public interface Observer {
     void update(Observable observable, Object object);
-    default void abc(){
+
+    default void abc() {
 
     }
 }

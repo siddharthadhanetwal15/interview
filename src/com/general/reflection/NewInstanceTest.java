@@ -10,9 +10,8 @@ package com.general.reflection;
 public class NewInstanceTest {
     // This method creates an instance of class whose name is
     // passed as a string 'c'.
-    public static void fun(String c)  throws InstantiationException,
-            IllegalAccessException, ClassNotFoundException
-    {
+    public static void fun(String c) throws InstantiationException,
+            IllegalAccessException, ClassNotFoundException {
         // Create an object of type 'c'
         Object obj = Class.forName(c).newInstance();
 
@@ -20,6 +19,7 @@ public class NewInstanceTest {
         System.out.println("Object created for class:"
                 + obj.getClass().getName());
     }
+
     public static void main(String[] args) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         fun("A");
     }

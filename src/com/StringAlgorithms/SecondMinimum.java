@@ -12,19 +12,16 @@ public class SecondMinimum {
         int first, second, arr_size = input.length;
 
         /* There should be atleast two elements */
-        if (arr_size < 2)
-        {
+        if (arr_size < 2) {
             System.out.println(" Invalid Input ");
             return;
         }
 
         first = second = Integer.MAX_VALUE;
-        for (int i = 0; i < arr_size ; i ++)
-        {
+        for (int i = 0; i < arr_size; i++) {
             /* If current element is smaller than first
               then update both first and second */
-            if (input[i] < first)
-            {
+            if (input[i] < first) {
                 second = first;
                 first = input[i];
             }

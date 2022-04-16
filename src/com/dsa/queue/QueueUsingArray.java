@@ -5,7 +5,7 @@ package com.dsa.queue;
  */
 public class QueueUsingArray {
     int front, rear, size;
-    int  capacity;
+    int capacity;
     int queue[];
 
     public QueueUsingArray(int capacity) {
@@ -15,22 +15,22 @@ public class QueueUsingArray {
         rear = -1;
     }
 
-    void enqueue(int data){
+    void enqueue(int data) {
         queue[++rear] = data;
     }
 
-    int dequeue(){
+    int dequeue() {
         int frontItem = front();
         queue[front] = 0;
         front = front + 1;
         return frontItem;
     }
 
-    int front(){
+    int front() {
         return queue[front];
     }
 
-    int rear(){
+    int rear() {
         return queue[rear];
     }
 

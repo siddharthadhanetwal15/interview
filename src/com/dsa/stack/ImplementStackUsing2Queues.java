@@ -10,26 +10,28 @@ public class ImplementStackUsing2Queues {
     Queue<Integer> queue1 = new LinkedList<>();
     Queue<Integer> queue2 = new LinkedList<>();
 
-    void push(int data){
+    void push(int data) {
         queue1.add(data);
     }
-
-    void pop(){
+//30 20 10
+//20 10
+    void pop() {
         Queue<Integer> temp = new LinkedList<>();
-        if(!queue1.isEmpty()){
-            while(queue1.size()>1){
+        if (!queue1.isEmpty()) {
+            while (queue1.size() > 1) {
                 queue2.add(queue1.remove());
             }
-            System.out.println("element removed : "+ queue1.remove());
+            System.out.println("element removed : " + queue1.remove());
             //temp = queue2;
             queue1 = queue2;
             queue2 = temp;
         }
     }
 
-    void print(){
+    void print() {
         System.out.println(queue1);
     }
+
     public static void main(String[] args) {
         ImplementStackUsing2Queues stackUsing2Queues = new ImplementStackUsing2Queues();
         stackUsing2Queues.push(10);

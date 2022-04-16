@@ -8,56 +8,56 @@ import java.util.Hashtable;
 public class LoopInLinkedList {
     ListNode head;
 
-    void pushElement(int data){
+    void pushElement(int data) {
         ListNode newNode = new ListNode(data);
         ListNode traverseNode = head;
-        if(head == null){
+        if (head == null) {
             head = newNode;
             return;
-        }else {
-           while(traverseNode.getNext() != null) {
-               traverseNode = traverseNode.getNext();
-           }
+        } else {
+            while (traverseNode.getNext() != null) {
+                traverseNode = traverseNode.getNext();
+            }
             traverseNode.setNext(newNode);
         }
     }
 
-    void print(){
+    void print() {
         ListNode traverseNode = head;
-        while(traverseNode != null){
+        while (traverseNode != null) {
             System.out.println(traverseNode.getData());
             traverseNode = traverseNode.getNext();
         }
     }
 
-    void makeLoop(){
+    void makeLoop() {
         ListNode lastNode = head;
-        while(lastNode.getNext() != null){
+        while (lastNode.getNext() != null) {
             lastNode = lastNode.getNext();
         }
         lastNode.setNext(head.getNext().getNext().getNext());
     }
 
-    void checkLoopUsingTwoPointers(){ // floyd cycle
+    void checkLoopUsingTwoPointers() { // floyd cycle
         int data = 0;
         ListNode fast = head;
         ListNode slow = head;
-        while (fast.getNext()!= null){
+        while (fast.getNext() != null) {
             fast = fast.getNext().getNext();
             slow = slow.getNext();
-            if(fast == slow){
+            if (fast == slow) {
                 System.out.println("loop found");
                 break;
             }
         }
     }
 
-    int checkUsingVisitedVar(){
+    int checkUsingVisitedVar() {
         ListNode traverseNode = head;
-        while(traverseNode.getNext() != null){
-            if(traverseNode.isVisited()){
+        while (traverseNode.getNext() != null) {
+            if (traverseNode.isVisited()) {
                 return traverseNode.getData();
-            }else {
+            } else {
                 traverseNode.setVisited(true);
                 traverseNode = traverseNode.getNext();
             }

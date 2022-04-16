@@ -5,33 +5,35 @@ package com.dsa.stack;
  */
 public class StackUsingArray {
     private int[] stack;
-    int top=-1;
-    int capacity=10;
-    StackUsingArray(){
+    int top = -1;
+    int capacity = 10;
+
+    StackUsingArray() {
         stack = new int[capacity];
     }
-    void push(int data){
-        if(stack.length == top){
+
+    void push(int data) {
+        if (stack.length == top) {
             System.out.println("item can't be inserted!");
-        }else{
+        } else {
             stack[++top] = data;
         }
     }
 
-    void pop(){
-        if(top == 0){
+    void pop() {
+        if (top == 0) {
             System.out.println("no item to pop");
-        }else{
+        } else {
             stack[top--] = 0;
         }
     }
 
-    int getTop(){
+    int getTop() {
         return stack[top];
     }
 
-    void print(){
-        for(int i = 0; i<stack.length; i++) {
+    void print() {
+        for (int i = 0; i < stack.length; i++) {
             System.out.println(stack[i]);
         }
     }
@@ -44,6 +46,6 @@ public class StackUsingArray {
         stackUsingArray.push(40);
         stackUsingArray.pop();
         stackUsingArray.print();
-        System.out.println("top element is: "+ stackUsingArray.getTop());
+        System.out.println("top element is: " + stackUsingArray.getTop());
     }
 }

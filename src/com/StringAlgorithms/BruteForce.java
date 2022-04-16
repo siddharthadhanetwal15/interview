@@ -2,13 +2,13 @@ package com.StringAlgorithms;
 
 public class BruteForce {
 
-    public int matchStringUsingBruteForce(char T[], int n, char P[], int m){
-        for(int i = 0; i <= n - m; i++){    //n-m = to iterate only till n-m length.. because further check will be done by j loop
+    public int matchStringUsingBruteForce(char T[], int n, char P[], int m) {
+        for (int i = 0; i <= n - m; i++) {    //n-m = to iterate only till n-m length.. because further check will be done by j loop
             int j = 0;
-            while(j < m && P[j] == T[i + j]){
+            while (j < m && P[j] == T[i + j]) {
                 j = j + 1;
             }
-            if(j == m){
+            if (j == m) {
                 return i;
             }
         }

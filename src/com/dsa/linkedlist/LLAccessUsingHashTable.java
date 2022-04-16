@@ -10,14 +10,14 @@ public class LLAccessUsingHashTable {
     Hashtable<Integer, Integer> hashtable = new Hashtable<>();
     int position = 1;
 
-    void pushElement(int data){
+    void pushElement(int data) {
         ListNode newNode = new ListNode(data);
         ListNode traverseNode = head;
-        if(traverseNode == null){
+        if (traverseNode == null) {
             traverseNode = newNode;
             head = traverseNode;
-        } else{
-            while(traverseNode.getNext() != null){
+        } else {
+            while (traverseNode.getNext() != null) {
                 traverseNode = traverseNode.getNext();
             }
             traverseNode.setNext(newNode);

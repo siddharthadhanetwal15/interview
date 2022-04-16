@@ -3,7 +3,7 @@ package com.scratchpad;
 /**
  * Created by dhanetwa on 9/24/2018.
  */
-public class ThreadTest2Start extends Thread{
+public class ThreadTest2Start extends Thread {
     @Override
     public void run() {
         System.out.println("from inside run");

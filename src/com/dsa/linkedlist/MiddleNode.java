@@ -3,15 +3,17 @@ package com.dsa.linkedlist;
 /**
  * Created by dhanetwa on 6/28/2018.
  * Find the middle of a given linked list in C and Java
- Given a singly linked list, find middle of the linked list. For example, if given linked list is 1->2->3->4->5 then output should be 3.
-
- If there are even nodes, then there would be two middle nodes, we need to print second middle element. For example, if given linked list is 1->2->3->4->5->6 then output should be 4.
+ * Given a singly linked list, find middle of the linked list. For example, if given linked list is 1->2->3->4->5 then output should be 3.
+ * <p>
+ * If there are even nodes, then there would be two middle nodes, we need to print second middle element. For example, if given linked list is 1->2->3->4->5->6 then output should be 4.
  */
 public class MiddleNode {
     private ListNode head;
-    public MiddleNode(ListNode head){
+
+    public MiddleNode(ListNode head) {
         this.head = head;
     }
+
     int findMiddlePosition() {
         ListNode traverseNode = head;
         int length = 1;
@@ -20,11 +22,11 @@ public class MiddleNode {
             length++;
         }
         int middlePosition;
-        middlePosition = length/2 + 1;
+        middlePosition = length / 2 + 1;
         return middlePosition;
     }
 
-    int findElementAtPosition(int position){
+    int findElementAtPosition(int position) {
         ListNode traverseNode = head;
         int counter = 1;
         while (counter < position) {
@@ -34,15 +36,15 @@ public class MiddleNode {
         return traverseNode.getData();
     }
 
-    int efficientApproach(){
+    int efficientApproach() {
         ListNode firstPointer = head;
         ListNode secondPointer = head;
         int toggle = 0;
-        while (firstPointer.getNext() != null){
-            if(toggle==0){
+        while (firstPointer.getNext() != null) {
+            if (toggle == 0) {
                 firstPointer = firstPointer.getNext();
-                toggle=1;
-            }else if(toggle==1){
+                toggle = 1;
+            } else if (toggle == 1) {
                 firstPointer = firstPointer.getNext();
                 secondPointer = secondPointer.getNext();
                 toggle = 0;
@@ -50,6 +52,7 @@ public class MiddleNode {
         }
         return secondPointer.getData();
     }
+
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         ListNode node1 = new ListNode(5);

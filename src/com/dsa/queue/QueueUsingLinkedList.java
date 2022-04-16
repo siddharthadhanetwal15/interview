@@ -10,13 +10,13 @@ public class QueueUsingLinkedList {
     int front = 0;
     int rear = 0;
 
-    void insertAtEnd(int data){
+    void insertAtEnd(int data) {
         ListNode newNode = new ListNode(data);
-        if(head == null) {
+        if (head == null) {
             head = newNode;
-        }else{
+        } else {
             ListNode traverseNode = head;
-            while(traverseNode.getNext() != null){
+            while (traverseNode.getNext() != null) {
                 traverseNode = traverseNode.getNext();
             }
             traverseNode.setNext(newNode);
@@ -24,14 +24,14 @@ public class QueueUsingLinkedList {
         }
     }
 
-    void deque(){
-        head=head.getNext();
+    void deque() {
+        head = head.getNext();
         front++;
     }
 
-    void printQueue(){
+    void printQueue() {
         ListNode traverseNode = head;
-        while(traverseNode != null){
+        while (traverseNode != null) {
             System.out.println(traverseNode.getData());
             traverseNode = traverseNode.getNext();
         }

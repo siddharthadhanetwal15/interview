@@ -3,14 +3,16 @@ package com.general.multithreading.basic;
 /**
  * Created by dhanetwa on 4/21/2018.
  */
-public class JoinDemo extends Thread{
+public class JoinDemo extends Thread {
     @Override
     public void run() {
-        for(int i=1;i<=10;i++){
-            try{
+        for (int i = 1; i <= 10; i++) {
+            try {
                 Thread.sleep(500);
-            }catch(Exception e){System.out.println(e);}
-            System.out.println(this.getName() + " : "+ i);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            System.out.println(this.getName() + " : " + i);
         }
     }
 

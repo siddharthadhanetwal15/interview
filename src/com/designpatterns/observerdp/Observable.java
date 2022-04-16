@@ -9,47 +9,53 @@ import java.util.List;
 public class Observable {
     private boolean changed = false;
     private List<Observer> observers;
-    Observable(){
+
+    Observable() {
         observers = new ArrayList<>();
     }
 
-    public synchronized void  addObserver(Observer observer){
-        if(observer==null){
+    public synchronized void addObserver(Observer observer) {
+        if (observer == null) {
             throw new NullPointerException();
         }
-        if(!observers.contains(observer)){
+        if (!observers.contains(observer)) {
             observers.add(observer);
         }
     }
 
-    public void notifyObserver(){
+    public void notifyObserver() {
         notifyObservers(null);
     }
 
-    public void notifyObservers(Object object){
-        synchronized (this){
-            if(!changed) {
+    public void notifyObservers(Object object) {
+        synchronized (this) {
+            if (!changed) {
                 return;
             }
             clearChanged();
-        for (Observer observer : observers){
+            for (Observer observer : observers) {
                 observer.update(this, object);
-        }
+            }
         }
     }
-    public synchronized void deleteObservers(){
+
+    public synchronized void deleteObservers() {
         observers.clear();
     }
-    protected synchronized void setChanged(){
+
+    protected synchronized void setChanged() {
         changed = true;
     }
-    protected synchronized void clearChanged(){
+
+    protected synchronized void clearChanged() {
         changed = false;
     }
-    public synchronized boolean hasChanged(){
+
+    public synchronized boolean hasChanged() {
         return changed;
     }
-    public synchronized int countObservers(){
+
+    public synchronized int countObservers() {
         return observers.size();
     }
 }

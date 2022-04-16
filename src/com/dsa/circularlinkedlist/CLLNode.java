@@ -7,7 +7,7 @@ public class CLLNode {
     private int data;
     private CLLNode next;
 
-    public CLLNode(int data){
+    public CLLNode(int data) {
         this.data = data;
         this.next = null;
     }

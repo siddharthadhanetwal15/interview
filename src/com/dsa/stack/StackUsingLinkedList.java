@@ -8,23 +8,23 @@ import com.dsa.linkedlist.ListNode;
 public class StackUsingLinkedList {
     ListNode top;
 
-    void push(int data){
+    void push(int data) {
         ListNode newNode = new ListNode(data);
-        if(top == null){
+        if (top == null) {
             top = newNode;
-        }else{
+        } else {
             newNode.setNext(top);
             top = newNode;
         }
     }
 
-    void pop(){
+    void pop() {
         top = top.getNext();
     }
 
-    void print(){
+    void print() {
         ListNode traverseNode = top;
-        while (traverseNode != null){
+        while (traverseNode != null) {
             System.out.println(traverseNode.getData());
             traverseNode = traverseNode.getNext();
         }

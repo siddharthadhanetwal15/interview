@@ -15,12 +15,14 @@ public class GenericClass {
 
         //multiple type
         Test2<Integer, String> test2 = new Test2<>(99, "multiple type param");
-        System.out.println(test2.getObj1()+" , "+ test2.getObj2());
+        System.out.println(test2.getObj1() + " , " + test2.getObj2());
     }
 }
-class Test<T>{
+
+class Test<T> {
     T obj;
-    Test(T obj){
+
+    Test(T obj) {
         this.obj = obj;
     }
 
@@ -29,10 +31,11 @@ class Test<T>{
     }
 }
 
-class Test2<T, U>{
+class Test2<T, U> {
     T obj1;
     U obj2;
-    Test2(T obj1, U obj2){
+
+    Test2(T obj1, U obj2) {
         this.obj1 = obj1;
         this.obj2 = obj2;
     }

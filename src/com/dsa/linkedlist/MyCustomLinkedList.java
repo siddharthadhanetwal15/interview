@@ -6,23 +6,23 @@ package com.dsa.linkedlist;
 public class MyCustomLinkedList {
     private ListNode head = null;
 
-    void addData(int data){
+    void addData(int data) {
         ListNode listNode = new ListNode(data);
-        if(head == null){
+        if (head == null) {
             head = listNode;
             return;
-        } else{
+        } else {
             ListNode lastNode = head;
-            while (lastNode.getNext() != null){
+            while (lastNode.getNext() != null) {
                 lastNode = lastNode.getNext();
             }
             lastNode.setNext(listNode);
         }
     }
 
-    void traverse(){
+    void traverse() {
         ListNode traverseNode = head;
-        while (traverseNode != null){
+        while (traverseNode != null) {
             System.out.println(traverseNode.getData());
             traverseNode = traverseNode.getNext();
         }

@@ -4,12 +4,12 @@ package com.general.sorting;
  * Created by dhanetwa on 2/27/2018.
  */
 public class SelectionSort {
-    private void sort(int arr[]){
+    private void sort(int arr[]) {
         int temp = 0;
-        int sub[] =new int[arr.length];
-        for(int i = 0; i < arr.length; i++){
-            for(int j = i+1; j<arr.length; j++){
-                if(arr[i] > arr[j]){
+        int sub[] = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
                     temp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = temp;

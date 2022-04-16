@@ -1,8 +1,7 @@
 package com.general.java8.diamond;
 
 public class GrandParent {
-    void fun()
-    {
+    void fun() {
         System.out.println("Grandparent");
     }
 }

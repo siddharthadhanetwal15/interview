@@ -1,9 +1,10 @@
 package com.general.castingQuestions;
 
 public class Example1 {
-    void method1(){
+    void method1() {
         System.out.println("Example1");
     }
+
     public static void main(String[] args) {
         Example1 example1 = new B();
         example1.method1();
@@ -13,8 +14,9 @@ public class Example1 {
         /*http://www.codejava.net/java-core/the-java-language/what-is-upcasting-and-downcasting-in-java*/
     }
 }
-class B extends Example1{
-    void method1(){
+
+class B extends Example1 {
+    void method1() {
         System.out.println("B");
     }
 }

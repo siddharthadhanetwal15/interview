@@ -10,15 +10,17 @@ import java.util.Stack;
 public class ImplementStackUsing1Queue {
     Queue<Integer> queue = new LinkedList<>();
     int count = 4;
-    void push(int data){
+
+    void push(int data) {
         queue.add(data);
         int size = queue.size();
-        while (size > 1){
+        while (size > 1) {
             queue.add(queue.remove());
             size--;
         }
     }
-    void print(){
+
+    void print() {
         System.out.println(queue);
     }
     /*20 10

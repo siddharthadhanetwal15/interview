@@ -9,7 +9,7 @@ import java.util.TreeSet;
  */
 public class DuplicateSubstring {
 
-    void getSubstring(String inputString, int sequenceLength){
+    void getSubstring(String inputString, int sequenceLength) {
         if (inputString.isEmpty() || sequenceLength <= 0 || sequenceLength >= inputString.length()) {
             System.out.println("Invalid input");
         } else {

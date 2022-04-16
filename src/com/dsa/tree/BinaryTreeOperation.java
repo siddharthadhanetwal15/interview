@@ -17,27 +17,25 @@ public class BinaryTreeOperation {
         this.root = root;
     }
 
-    BinaryTreeNode insertNodeUsingQueueLevelOrder(BinaryTreeNode root, int data){
-        if(root == null){
+    BinaryTreeNode insertNodeUsingQueueLevelOrder(BinaryTreeNode root, int data) {
+        if (root == null) {
             return null;
         }
         Queue<BinaryTreeNode> binaryTreeNodeQueue = new LinkedList<>();
         binaryTreeNodeQueue.add(root);
-        while(!binaryTreeNodeQueue.isEmpty()){
+        while (!binaryTreeNodeQueue.isEmpty()) {
             BinaryTreeNode tmp = binaryTreeNodeQueue.poll();
-            if(tmp != null){
-                if(tmp.getLeft()!=null){
+            if (tmp != null) {
+                if (tmp.getLeft() != null) {
                     binaryTreeNodeQueue.add(tmp.getLeft());
-                }
-                else{
+                } else {
                     tmp.left = new BinaryTreeNode(data);
                     return root;
                 }
             }
-            if(tmp.getRight() != null){
+            if (tmp.getRight() != null) {
                 binaryTreeNodeQueue.add(tmp.getRight());
-            }
-            else{
+            } else {
                 tmp.right = new BinaryTreeNode(data);
                 return root;
             }
@@ -47,26 +45,25 @@ public class BinaryTreeOperation {
 
     //recursive
 
-    public void insert(int data)
-    {
+    public void insert(int data) {
         root = insert(root, data);
     }
 
-    BinaryTreeNode insert(BinaryTreeNode node, int data){
-        if(node == null){
+    BinaryTreeNode insert(BinaryTreeNode node, int data) {
+        if (node == null) {
             node = new BinaryTreeNode(data);
-        }else{
-            if(node.getRight() == null){
+        } else {
+            if (node.getRight() == null) {
                 node.right = insert(node.right, data);
-            }else{
+            } else {
                 node.left = insert(node.left, data);
             }
         }
         return node;
     }
 
-    void traverseTreePreorder(BinaryTreeNode node){
-        if(node != null) {
+    void traverseTreePreorder(BinaryTreeNode node) {
+        if (node != null) {
             System.out.println(node.getData());
             traverseTreePreorder(node.getLeft());
             traverseTreePreorder(node.getRight());
@@ -87,10 +84,10 @@ public class BinaryTreeOperation {
         binaryTreeOperation.insert(1);
         binaryTreeOperation.insert(2);
         binaryTreeOperation.insert(3);
-        binaryTreeOperation.insert( 4);
-        binaryTreeOperation.insert( 5);
-        binaryTreeOperation.insert( 6);
-        binaryTreeOperation.insert( 7);
+        binaryTreeOperation.insert(4);
+        binaryTreeOperation.insert(5);
+        binaryTreeOperation.insert(6);
+        binaryTreeOperation.insert(7);
 
         binaryTreeOperation.traverseTreePreorder(binaryTreeOperation.getRoot());
     }

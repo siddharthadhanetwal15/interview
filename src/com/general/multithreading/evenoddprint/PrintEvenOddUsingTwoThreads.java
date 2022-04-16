@@ -1,25 +1,27 @@
 package com.general.multithreading.evenoddprint;
 
-class Printer{
+class Printer {
     int counter = 0;
+
     void even() throws InterruptedException {
-        synchronized (this){
-            while(counter != 20){
-                if(counter % 2 == 1){
+        synchronized (this) {
+            while (counter != 20) {
+                if (counter % 2 == 1) {
                     wait();
-                } else{
+                } else {
                     notify();
                     System.out.println(Thread.currentThread().getName() + " : " + counter++);
                 }
             }
         }
     }
+
     void odd() throws InterruptedException {
-        synchronized (this){
-            while (counter != 20){
-                if(counter % 2 == 0){
+        synchronized (this) {
+            while (counter != 20) {
+                if (counter % 2 == 0) {
                     wait();
-                } else{
+                } else {
                     notify();
                     System.out.println(Thread.currentThread().getName() + " : " + counter++);
                 }
@@ -27,6 +29,7 @@ class Printer{
         }
     }
 }
+
 public class PrintEvenOddUsingTwoThreads {
     public static void main(String[] args) {
         final Printer printer = new Printer();

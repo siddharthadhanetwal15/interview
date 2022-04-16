@@ -12,7 +12,7 @@ public class LockDemo {
         Runnable r = new Runnable() {
             @Override
             public void run() {
-                System.out.println(Thread.currentThread().getName()+" "+counter.getCount());
+                System.out.println(Thread.currentThread().getName() + " " + counter.getCount());
             }
         };
         Thread t1 = new Thread(r, "t1");
@@ -24,19 +24,20 @@ public class LockDemo {
     }
 }
 
-class Counter{
+class Counter {
     private Lock lock;
     private int count;
 
-    Counter(Lock lock){
+    Counter(Lock lock) {
         this.lock = lock;
     }
+
     public int getCount() {
         lock.lock();
-        try{
+        try {
             count++;
             return count;
-        }finally {
+        } finally {
             lock.unlock();
         }
     }

@@ -8,18 +8,21 @@ import java.util.Stack;
 public class ImplementQueueUsing2Stacks {
     Stack<Integer> stack1 = new Stack<>();
     Stack<Integer> stack2 = new Stack<>();
-    void push(int data){
+
+    void push(int data) {
         stack1.push(data);
     }
-    void pop(){
-        if(stack2.isEmpty()) {
+
+    void pop() {
+        if (stack2.isEmpty()) {
             while (!stack1.empty()) {
                 stack2.push(stack1.pop());
             }
         }
-        System.out.println("popped element : "+stack2.pop());
+        System.out.println("popped element : " + stack2.pop());
     }
-    void print(){
+
+    void print() {
 
     }
 

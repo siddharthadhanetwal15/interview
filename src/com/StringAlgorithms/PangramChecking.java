@@ -7,6 +7,7 @@ public class PangramChecking {
     public static void main(String[] args) {
         String input = "The quick brown fox jumps";
         char inputArr[] = input.toCharArray();
-        for(int i=0; i<inputArr.length; i++){}
+        for (int i = 0; i < inputArr.length; i++) {
+        }
     }
 }

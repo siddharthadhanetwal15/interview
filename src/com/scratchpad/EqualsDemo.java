@@ -15,9 +15,11 @@ public class EqualsDemo {
 
     }
 }
-class Employee{
+
+class Employee {
     private String name;
-    Employee(String name){
+
+    Employee(String name) {
         this.name = name;
     }
 
@@ -36,10 +38,9 @@ class Employee{
 
     @Override
     public boolean equals(Object obj) {
-        if(this.name.equals(((Employee)obj).getName())){
+        if (this.name.equals(((Employee) obj).getName())) {
             return true;
-        }
-        else
+        } else
             return false;
     }
 }

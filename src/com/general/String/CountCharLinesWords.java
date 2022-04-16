@@ -7,8 +7,7 @@ import java.io.*;
  */
 public class CountCharLinesWords {
 
-    public static void main(String[] args) throws IOException
-    {
+    public static void main(String[] args) throws IOException {
         File file = new File("C:\\Users\\Mayank\\Desktop\\1.txt");
         FileInputStream fileStream = new FileInputStream(file);
         InputStreamReader input = new InputStreamReader(fileStream);
@@ -26,14 +25,11 @@ public class CountCharLinesWords {
         // Reading line by line from the
         // file until a null is returned
         try {
-            while((line = reader.readLine()) != null)
-            {
-                if(line.equals(""))
-                {
+            while ((line = reader.readLine()) != null) {
+                if (line.equals("")) {
                     paragraphCount++;
                 }
-                if(!(line.equals("")))
-                {
+                if (!(line.equals(""))) {
 
                     characterCount += line.length();
 
@@ -41,7 +37,7 @@ public class CountCharLinesWords {
                     String[] wordList = line.split("\\s+");
 
                     countWord += wordList.length;
-                    whitespaceCount += countWord -1;
+                    whitespaceCount += countWord - 1;
 
                     // [!?.:]+ is the sentence delimiter in java
                     String[] sentenceList = line.split("[!?.:]+");

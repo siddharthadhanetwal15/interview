@@ -5,46 +5,48 @@ package com.dsa.stack;
  */
 public class StackUsingDynamicArray {
     private int[] stack;
-    int top=-1;
-    int capacity=2;
-    StackUsingDynamicArray(){
+    int top = -1;
+    int capacity = 2;
+
+    StackUsingDynamicArray() {
         stack = new int[capacity];
     }
-    void push(int data){
-        if(stack.length == top+1){
+
+    void push(int data) {
+        if (stack.length == top + 1) {
             stack = incrementArrayLength();
         }
         stack[++top] = data;
     }
 
-    void pop(){
-        if(top == 0){
+    void pop() {
+        if (top == 0) {
             System.out.println("no item to pop");
-        }else{
+        } else {
             stack[top--] = 0;
             stack = decrementArrayLength();
         }
     }
 
-    int getTop(){
+    int getTop() {
         return stack[top];
     }
 
-    void print(){
-        for(int i = 0; i<stack.length; i++) {
+    void print() {
+        for (int i = 0; i < stack.length; i++) {
             System.out.println(stack[i]);
         }
     }
 
-    int[] incrementArrayLength(){
-        int temp[] = new int[stack.length*2];
-        System.arraycopy(stack,0,temp,0,top+1);
+    int[] incrementArrayLength() {
+        int temp[] = new int[stack.length * 2];
+        System.arraycopy(stack, 0, temp, 0, top + 1);
         return temp;
     }
 
-    int[] decrementArrayLength(){
-        int temp[] = new int[stack.length-1];
-        System.arraycopy(stack,0,temp,0,top+1);
+    int[] decrementArrayLength() {
+        int temp[] = new int[stack.length - 1];
+        System.arraycopy(stack, 0, temp, 0, top + 1);
         return temp;
     }
 
@@ -58,6 +60,6 @@ public class StackUsingDynamicArray {
         stackUsingDynamicArray.push(50);
         stackUsingDynamicArray.pop();
         stackUsingDynamicArray.print();
-        System.out.println("top element is: "+ stackUsingDynamicArray.getTop());
+        System.out.println("top element is: " + stackUsingDynamicArray.getTop());
     }
 }

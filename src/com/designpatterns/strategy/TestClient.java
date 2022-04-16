@@ -13,9 +13,9 @@ public class TestClient {
         try {
             System.out.println("in try");
             return;
-        } catch (Exception e){
+        } catch (Exception e) {
 
-        }finally {
+        } finally {
             System.out.println(" finally");
         }
     }

@@ -6,50 +6,51 @@ package com.dsa.linkedlist;
 public class LinkedList {
     private int length;
     private ListNode head;
-    public LinkedList(){
+
+    public LinkedList() {
         length = 0;
     }
-    public synchronized ListNode getHead(){
+
+    public synchronized ListNode getHead() {
         return head;
     }
-    public synchronized void insertAtBegin(ListNode listNode){
+
+    public synchronized void insertAtBegin(ListNode listNode) {
         listNode.setNext(head); //head is nothing but the initial node. we set listnode.next(head) so that when we insert second element, first element which is head should be appended to first element.
         head = listNode; // here after appending, now head is the second node.. which was recently got introduced. head->listNode1->listNode2->null
         length++;
     }
 
-    public synchronized void insertAtEnd(ListNode listNode){
-        if(head == null){
+    public synchronized void insertAtEnd(ListNode listNode) {
+        if (head == null) {
             head = listNode;
             return;
         }
         ListNode lastNode = head;
-        while(lastNode.getNext() != null){
-            lastNode=lastNode.getNext();
+        while (lastNode.getNext() != null) {
+            lastNode = lastNode.getNext();
         }
         lastNode.setNext(listNode);
         length++;
     }
 
-    private void print()
-    {
+    private void print() {
         ListNode traverseNode = head;
-        while (traverseNode != null)
-        {
+        while (traverseNode != null) {
             System.out.println(traverseNode.getData());
             traverseNode = traverseNode.getNext();
         }
     }
 
-    public void insertAtPosition(ListNode listNode, int position){
-        if(head == null){
+    public void insertAtPosition(ListNode listNode, int position) {
+        if (head == null) {
             System.out.println("linked list empty");
             return;
         }
         int counter = 1;
         ListNode traverseNode = head;
-        while (true){
-            if(counter == position){
+        while (true) {
+            if (counter == position) {
                 listNode.setNext(traverseNode.getNext());
                 traverseNode.setNext(listNode);
                 length++;
@@ -60,16 +61,16 @@ public class LinkedList {
         }
     }
 
-    public void insertAtPosition(int data, int position){
-        if(position < 0 || position > length){
+    public void insertAtPosition(int data, int position) {
+        if (position < 0 || position > length) {
             System.out.println("wrong position");
             return;
         }
         ListNode traverseNode = head;
         int counter = 1;
         position--;
-        while (traverseNode != null){
-            if(counter == position){
+        while (traverseNode != null) {
+            if (counter == position) {
                 ListNode newListNode = new ListNode(data);
                 newListNode.setNext(traverseNode.getNext());
                 traverseNode.setNext(newListNode);
@@ -81,54 +82,56 @@ public class LinkedList {
         length++;
     }
 
-    public synchronized void removeFromBegin(){
+    public synchronized void removeFromBegin() {
         ListNode node = head;
-        if(node != null){
+        if (node != null) {
             head = node.getNext();
             node.setNext(null);
             length--;
         }
     }
 
-    public synchronized void removeFromEnd(){
+    public synchronized void removeFromEnd() {
         ListNode TNode = head, pTNode = null, next = head.getNext();
-        if(head == null){
+        if (head == null) {
             System.out.println("empty list");
         }
-        if(next == null){
+        if (next == null) {
             head = null;
         }
-        while ((next = TNode.getNext()) != null){
+        while ((next = TNode.getNext()) != null) {
             pTNode = TNode;
             TNode = next;
         }
         pTNode.setNext(null);
     }
 
-    public void removeFromPosition(int position){
+    public void removeFromPosition(int position) {
         ListNode traverseNode = head;
-        int counter=1;
+        int counter = 1;
         position--;
-        while(traverseNode.getNext() != null){
+        while (traverseNode.getNext() != null) {
             traverseNode = traverseNode.getNext();
             counter++;
-            if(counter == position){
+            if (counter == position) {
                 traverseNode.setNext(traverseNode.getNext().getNext());
                 length--;
                 break;
             }
         }
     }
-    int getPosition(int data){
+
+    int getPosition(int data) {
         int position = 1;
         ListNode traverseNode = head;
-        while(traverseNode.getData() != data){
+        while (traverseNode.getData() != data) {
             position++;
             traverseNode = traverseNode.getNext();
         }
         return position;
     }
-    void clearList(LinkedList linkedList){
+
+    void clearList(LinkedList linkedList) {
         head = null;
         length = 0;
     }
@@ -150,6 +153,6 @@ public class LinkedList {
         linkedList.removeFromEnd();
         linkedList.removeFromPosition(3);
         linkedList.print();
-        System.out.println("position of 25 data : "+ linkedList.getPosition(25));
+        System.out.println("position of 25 data : " + linkedList.getPosition(25));
     }
 }

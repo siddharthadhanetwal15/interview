@@ -8,7 +8,7 @@ import java.util.Random;
 public class RunnableFutureTaskTest {
     public static void main(String[] args) throws InterruptedException {
         RunnableExample[] runnableExamples = new RunnableExample[5];
-        for(int i=0; i<5; i++){
+        for (int i = 0; i < 5; i++) {
             runnableExamples[i] = new RunnableExample();
             Thread t = new Thread(runnableExamples[i]);
             t.start();
@@ -17,32 +17,31 @@ public class RunnableFutureTaskTest {
             System.out.println(runnableExamples[i].get());
     }
 }
-class RunnableExample implements Runnable{
+
+class RunnableExample implements Runnable {
     // Shared object to store result
     private Object result = null;
+
     @Override
     public void run() {
         Random generator = new Random();
         Integer randomNumber = generator.nextInt(5);
         // As run cannot throw any Exception
-        try
-        {
+        try {
             Thread.sleep(randomNumber * 1000);
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
         // Store the return value in result when done
         result = randomNumber;
-        synchronized (this){
+        synchronized (this) {
             notify();
         }
     }
+
     public synchronized Object get()
-            throws InterruptedException
-    {
+            throws InterruptedException {
         while (result == null)
             wait();
 

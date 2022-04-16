@@ -29,7 +29,8 @@ public class ListStudentExample {
 
 
 }
-class Student{
+
+class Student {
     private String fname;
     private String lname;
 
@@ -56,7 +57,7 @@ class Student{
 
     @Override
     public boolean equals(Object o) {
-        if(o==this)return true;
+        if (o == this) return true;
         if (!(o instanceof Student)) {
             return false;
         }

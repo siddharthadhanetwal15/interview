@@ -7,15 +7,17 @@ public class DoublyLinkedList {
     private int length;
     private DLLNode head;
 
-    public DoublyLinkedList(int data){
+    public DoublyLinkedList(int data) {
         DLLNode newNode = new DLLNode(data);
         newNode.setPrev(null);
         newNode.setNext(null);
-        head = newNode;
+        head = newNode; //important
         length = 1;
     }
 
-    public void insertAtBegin(int data){
+    //  head -> 2 -> 5 -> 10
+    //            <-   <-
+    public void insertAtBegin(int data) {
         DLLNode newNode = new DLLNode(data);
         DLLNode lastNode = head;
         head = newNode;
@@ -37,22 +39,22 @@ public class DoublyLinkedList {
         head = new_Node;*/
     }
 
-    void insertAtEnd(int data){
+    void insertAtEnd(int data) {
         DLLNode newNode = new DLLNode(data);
         DLLNode traverseNode = head;
-        while(traverseNode.getNext() != null){
+        while (traverseNode.getNext() != null) {
             traverseNode = traverseNode.getNext();
         }
         traverseNode.setNext(newNode);
         newNode.setPrev(traverseNode);
     }
 
-    void insertAtPosition(int data, int position){
+    void insertAtPosition(int data, int position) {
         int counter = 1;
         DLLNode newNode = new DLLNode(data);
         DLLNode traverseNode = head;
         position--;
-        while(counter < position){
+        while (counter < position) {
             traverseNode = traverseNode.getNext();
             counter++;
         }
@@ -62,24 +64,24 @@ public class DoublyLinkedList {
         newNode.setPrev(traverseNode);
     }
 
-    void deleteAtBeginning(){
+    void deleteAtBeginning() {
         DLLNode firstNode = head;
         head = firstNode.getNext();
     }
 
-    void deleteFromEnd(){
+    void deleteFromEnd() {
         DLLNode traverseNode = head;
-        while (traverseNode.getNext()!= null){
+        while (traverseNode.getNext() != null) {
             traverseNode = traverseNode.getNext();
         }
         traverseNode.getPrev().setNext(null);
     }
 
-    void deleteFromPosition(int position){
+    void deleteFromPosition(int position) {
         int counter = 1;
         position--;
         DLLNode traverseNode = head;
-        while(counter < position){
+        while (counter < position) {
             traverseNode = traverseNode.getNext();
             counter++;
         }
@@ -87,13 +89,14 @@ public class DoublyLinkedList {
         traverseNode.getNext().setPrev(traverseNode);
     }
 
-    void print(){
+    void print() {
         DLLNode traverseNode = head;
-        while(traverseNode != null){
+        while (traverseNode != null) {
             System.out.println(traverseNode.getData());
             traverseNode = traverseNode.getNext();
         }
     }
+
     public static void main(String[] args) {
         DoublyLinkedList doublyLinkedList = new DoublyLinkedList(10);
         doublyLinkedList.insertAtBegin(5);

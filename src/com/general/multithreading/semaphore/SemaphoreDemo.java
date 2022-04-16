@@ -6,8 +6,7 @@ import java.util.concurrent.Semaphore;
  * Created by dhanetwa on 4/21/2018.
  */
 public class SemaphoreDemo {
-    public static void main(String args[]) throws InterruptedException
-    {
+    public static void main(String args[]) throws InterruptedException {
         // creating a Semaphore object
         // with number of permits 1
         Semaphore sem = new Semaphore(1);
@@ -31,18 +30,17 @@ public class SemaphoreDemo {
         System.out.println("count: " + Shared.count);
     }
 }
+
 //A shared resource/class.
-class Shared
-{
+class Shared {
     static int count = 0;
 }
 
-class MyThread extends Thread
-{
+class MyThread extends Thread {
     Semaphore sem;
     String threadName;
-    public MyThread(Semaphore sem, String threadName)
-    {
+
+    public MyThread(Semaphore sem, String threadName) {
         super(threadName);
         this.sem = sem;
         this.threadName = threadName;
@@ -52,11 +50,9 @@ class MyThread extends Thread
     public void run() {
 
         // run by thread A
-        if(this.getName().equals("A"))
-        {
+        if (this.getName().equals("A")) {
             System.out.println("Starting " + threadName);
-            try
-            {
+            try {
                 // First, get a permit.
                 System.out.println(threadName + " is waiting for a permit.");
 
@@ -68,8 +64,7 @@ class MyThread extends Thread
                 // Now, accessing the shared resource.
                 // other waiting threads will wait, until this
                 // thread release the lock
-                for(int i=0; i < 5; i++)
-                {
+                for (int i = 0; i < 5; i++) {
                     Shared.count++;
                     System.out.println(threadName + ": " + Shared.count);
 
@@ -91,11 +86,9 @@ class MyThread extends Thread
         }
 
         // run by thread B
-        else
-        {
+        else {
             System.out.println("Starting " + threadName);
-            try
-            {
+            try {
                 // First, get a permit.
                 System.out.println(threadName + " is waiting for a permit.");
 
@@ -107,8 +100,7 @@ class MyThread extends Thread
                 // Now, accessing the shared resource.
                 // other waiting threads will wait, until this
                 // thread release the lock
-                for(int i=0; i < 5; i++)
-                {
+                for (int i = 0; i < 5; i++) {
                     Shared.count--;
                     System.out.println(threadName + ": " + Shared.count);
 

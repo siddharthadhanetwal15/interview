@@ -3,7 +3,7 @@ package com.sapient.model;
 /**
  * Created by dhanetwa on 8/11/2018.
  */
-public class DetailInput extends DetailOutput{
+public class DetailInput extends DetailOutput {
     String currency;
     String city;
 

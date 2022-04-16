@@ -7,10 +7,11 @@ import java.util.ArrayList;
  * Deep copy of an object will have exact copy of all the fields of original object just like shallow copy. But in additional, if original object has any references to other objects as fields, then copy of those objects are also created by calling clone() method on them. That means clone object and original object will be 100% disjoint. They will be 100% independent of each other.
  * Any changes made to clone object will not be reflected in original object or vice-versa.
  */
-class Course implements Cloneable{
+class Course implements Cloneable {
     String subject1;
     String subject2;
     String subject3;
+
     public Course(String sub1, String sub2, String sub3) {
         this.subject1 = sub1;
         this.subject2 = sub2;
@@ -31,7 +32,8 @@ class Course implements Cloneable{
                 '}';
     }
 }
-class Student implements Cloneable{
+
+class Student implements Cloneable {
     int id;
     String name;
     Course course;
@@ -41,7 +43,8 @@ class Student implements Cloneable{
         this.name = name;
         this.course = course;
     }
-    protected Object clone() throws CloneNotSupportedException{
+
+    protected Object clone() throws CloneNotSupportedException {
         Student student = (Student) super.clone();
         student.course = (Course) course.clone();
         return student;
@@ -56,18 +59,19 @@ class Student implements Cloneable{
                 '}';
     }
 }
+
 public class DeepCopy {
     public static void main(String[] args) throws CloneNotSupportedException {
         Course science = new Course("Physics", "Chemistry", "Biology");
         Student sid = new Student(111, "John", science);
         Student kevy = null;
-        kevy = (Student)sid.clone();
+        kevy = (Student) sid.clone();
         //Printing the subject3 of 'student1'
         System.out.println(sid.course.subject3);         //Output : Biology
         //Changing the subject3 of 'student2'
         kevy.course.subject3 = "Maths";
         //This change will not be reflected in original student 'student1'
-        System.out.println("sid's 3rd subject: " +sid.course.subject3);       //Output : Biology
+        System.out.println("sid's 3rd subject: " + sid.course.subject3);       //Output : Biology
 
         System.out.println("kevy's 3rd subject: " + kevy.course.subject3);       //Output : Maths
 
@@ -82,10 +86,10 @@ public class DeepCopy {
         al.add("Orange");
         al.add("Mango");
         al.add("Grapes");
-        System.out.println("ArrayList: "+al);
+        System.out.println("ArrayList: " + al);
 
-        ArrayList<String> al2 = (ArrayList<String>)al.clone();
-        System.out.println("Shallow copy of ArrayList: "+ al2);
+        ArrayList<String> al2 = (ArrayList<String>) al.clone();
+        System.out.println("Shallow copy of ArrayList: " + al2);
 
         //add and remove on original ArrayList
         al.add("Fig");
@@ -93,7 +97,7 @@ public class DeepCopy {
         al2.add("baba");
 
         //Display of both ArrayLists after add & remove
-        System.out.println("Original ArrayList:"+al);
-        System.out.println("Cloned ArrayList:"+al2);
+        System.out.println("Original ArrayList:" + al);
+        System.out.println("Cloned ArrayList:" + al2);
     }
 }
